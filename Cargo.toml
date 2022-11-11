@@ -1,0 +1,22 @@
+[package]
+name = "axum_sample_package"
+version = "0.1.0"
+edition = "2021"
+authors = ["Rodrigo Mata <rodrigo.mata.ib@gmail.com>"]
+
+[lib]
+name = "axum_sample_lib"
+path = "src/lib.rs"
+
+[[bin]]
+name = "axum_sample"
+path = "src/main.rs"
+
+[dependencies]
+axum = "0.5.17"
+tokio = { version = "1.21.2", features = ["full"] }
+tower-http = { version = "0.3.4", features = ["trace"] }
+
+[dev-dependencies]
+rusty-hook = "0.11.2"
+tower = { version = "0.4.13", features = ["util"] }
