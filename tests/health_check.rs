@@ -1,5 +1,8 @@
 mod tests {
-    use axum::{http::{Request, StatusCode}, body::Body};
+    use axum::{
+        body::Body,
+        http::{Request, StatusCode},
+    };
     use axum_sample_lib::router;
     use tower::ServiceExt;
 

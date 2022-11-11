@@ -11,15 +11,14 @@ pub async fn run(port: u16) {
 }
 
 pub fn router() -> Router {
-  Router::new()
-    .route("/", get(health_check))
+    Router::new().route("/", get(health_check))
 }
 
 pub fn get_available_port() -> u16 {
-  let listener = TcpListener::bind("127.0.0.1:0").expect("Failed to bind port");
-  let port = listener.local_addr().unwrap().port();
-  println!("Listening on port {port}");
-  port
+    let listener = TcpListener::bind("127.0.0.1:0").expect("Failed to bind port");
+    let port = listener.local_addr().unwrap().port();
+    println!("Listening on port {port}");
+    port
 }
 
 async fn health_check() -> axum::http::StatusCode {
